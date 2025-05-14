@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login / Register Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('anime-scenery-sunset-4k-xp.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .login-box {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      width: 350px;
+      overflow: hidden;
+    }
+
+    form {
+      display: none;
+      animation: fadeIn 0.5s forwards;
+    }
+
+    form.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .toggle-password-btn {
+      font-size: 0.85rem;
+      color: #007bff;
+      cursor: pointer;
+      user-select: none;
+      position: absolute;
+      left: 0;
+      bottom: -1.3rem;
+    }
+
+    .toggle-password-btn:hover {
+      text-decoration: underline;
+    }
+
+    .extra-options {
+      text-align: right;
+      font-size: 0.9rem;
+      margin-top: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .extra-options a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .extra-options a:hover {
+      text-decoration: underline;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .switch-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .switch-link a {
+      color: #007bff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .switch-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <!-- Login Form -->
+    <form id="loginForm" class="active">
+      <h2>Login</h2>
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <div class="toggle-password-btn" onclick="togglePassword('password', this)">Lihat Password</div>
+      </div>
+      <div class="extra-options">
+        <a href="#">Lupa Password?</a>
+      </div>
+      <button type="submit">Login</button>
+      <p class="switch-link">Belum punya akun? <a id="toRegister">Daftar</a></p>
+    </form>
+
+      <!-- Register Form -->
+<form id="registerForm">
+  <h2>Daftar</h2>
+  <div class="input-group">
+    <label for="reg-username">Username</label>
+    <input type="text" id="reg-username" name="reg-username" required>
+  </div>
+  <div class="input-group">
+    <label for="reg-password">Password</label>
+    <input type="password" id="reg-password" name="reg-password" required>
+    <div class="toggle-password-btn" onclick="togglePassword('reg-password', this)">Lihat Password</div>
+  </div>
+  <div class="extra-options"></div>
+  <button type="submit">Daftar</button>
+  <p class="switch-link">Sudah punya akun? <a id="toLogin">Login</a></p>
+</form>
+
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const toRegister = document.getElementById('toRegister');
+    const toLogin = document.getElementById('toLogin');
+
+    toRegister.addEventListener('click', () => {
+      loginForm.classList.remove('active');
+      registerForm.classList.add('active');
+    });
+
+    toLogin.addEventListener('click', () => {
+      registerForm.classList.remove('active');
+      loginForm.classList.add('active');
+    });
+
+    function togglePassword(id, el) {
+      const input = document.getElementById(id);
+      if (input.type === "password") {
+        input.type = "text";
+        el.textContent = "Sembunyikan Password";
+      } else {
+        input.type = "password";
+        el.textContent = "Lihat Password";
+      }
+    }
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === "admin" && password === "123456") {
+        window.location.href = "web.html";
+      } else {
+        alert("Username atau password salah!");
+      }
+    });
+
+    registerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Registrasi berhasil!\nSilakan login dengan akun Anda.");
+      registerForm.reset();
+      toLogin.click();
+    });
+  </script>
+
+</body>
+</html>
