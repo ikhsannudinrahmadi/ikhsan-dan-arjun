@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SANZ STORE ID</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .game-card.active {
+      border: 2px solid #f6513b;
+      background-color: #DBEAFE;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <section id="home" class="relative py-16 overflow-hidden">
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+    <source src="jawa.mp4" type="video/mp4">
+    Browser Anda tidak mendukung video tag.
+  </video>
+
+    <!-- Konten header -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <div class="flex items-center space-x-3 mb-4 md:mb-0 text-white">
+
+      </div>
+      <nav class="flex space-x-6 text-white font-medium">
+        <a href="#home" class="hover:text-gray-200 transition">Home</a>
+        <a href="#about" class="hover:text-gray-200 transition">Tentang Kami</a>
+        <a href="#services" class="hover:text-gray-200 transition">Layanan</a>
+        <a href="#contact" class="hover:text-gray-200 transition">Kontak</a>
+      </nav>
+    </div>
+
+    <!-- Hero Text -->
+    <div class="relative z-10 text-center mt-10 text-white">
+      <h2 class="text-3xl font-semibold mb-2">Top-Up Game Aman & Terpercaya</h2>
+      <p class="text-lg">Cepat • Terpercaya • Termurah</p>
+    </div>
+  </section>
+
+  <!-- Pilih Game -->
+  <section id="services" class="max-w-6xl mx-auto mt-16 px-4">
+    <h3 class="text-2xl font-semibold mb-6 text-gray-700 text-center">Pilih Game</h3>
+    <div id="gameList" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div data-game="Mobile Legends" class="game-card cursor-pointer p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+        <img src="ml.jpg" alt="Mobile Legends" class="w-full h-32 object-cover mb-2 rounded" />
+        <p class="text-center font-semibold">Mobile Legends</p>
+      </div>
+      <div data-game="Free Fire" class="game-card cursor-pointer p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+        <img src="FF.png" alt="Free Fire" class="w-full h-32 object-cover mb-2 rounded" />
+        <p class="text-center font-semibold">Free Fire</p>
+      </div>
+      <div data-game="Genshin Impact" class="game-card cursor-pointer p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+        <img src="genshin.png" alt="Genshin Impact" class="w-full h-32 object-cover mb-2 rounded" />
+        <p class="text-center font-semibold">Genshin Impact</p>
+      </div>
+      <div data-game="Pubg Mobile" class="game-card cursor-pointer p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+        <img src="pubg.jpg" alt="Pubg Mobile" class="w-full h-32 object-cover mb-2 rounded" />
+        <p class="text-center font-semibold">Pubg Mobile</p>
+      </div>
+      <div data-game="Call Of Duty Mobile" class="game-card cursor-pointer p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+        <img src="ce1a3b0ad90aa7ccd1c51589991eaa39.jpg" alt="Call Of Duty Mobile" class="w-full h-32 object-cover mb-2 rounded" />
+        <p class="text-center font-semibold">Call Of Duty Mobile</p>
+      </div>
+      <div data-game="Honkai Impact" class="game-card cursor-pointer p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+        <img src="download.jpg" alt="Honkai Impact" class="w-full h-32 object-cover mb-2 rounded" />
+        <p class="text-center font-semibold">Honkai Impact</p>
+    </div>
+    <div data-game="Point Blank" class="game-card cursor-pointer p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+        <img src="PB Indonesia, Game Point Blank dengan Segala Kisahnya 2.jpg" alt="Point Blank" class="w-full h-32 object-cover mb-2 rounded" />
+        <p class="text-center font-semibold">Point Blank</p>
+    <input type="hidden" id="selectedGame" name="game" required>
+    </div>
+    <div data-game="Joki Ml" class="game-card cursor-pointer p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+        <img src="baju putih.png" alt="Joki Ml" class="w-full h-32 object-cover mb-2 rounded" />
+        <p class="text-center font-semibold">Joki Ml</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="text-center py-6 mt-16 text-gray-500">
+    &copy; 2025 SANZ STORE ID. All rights reserved.
+  </footer>
+
+ <script>
+  const gameCards = document.querySelectorAll(".game-card");
+
+  gameCards.forEach(card => {
+    card.addEventListener("click", () => {
+      const selectedGame = card.getAttribute("data-game");
+
+      // Arahkan ke halaman topup sesuai game
+      if (selectedGame === "Mobile Legends") {
+        window.location.href = "ml.html";
+      } else if (selectedGame === "Free Fire") {
+        window.location.href = "ff.html";
+      } else if (selectedGame === "Genshin Impact") {
+        window.location.href = "genshin.html";
+      } else if (selectedGame === "Pubg Mobile") {
+        window.location.href = "pubg.html";
+      } else if (selectedGame === "Call Of Duty Mobile") {
+        window.location.href = "cod.html";
+      } else if (selectedGame === "Honkai Impact") {
+        window.location.href = "honkai.html";
+      } else if (selectedGame === "Point Blank") {
+        window.location.href = "pb.html";
+      }else if (selectedGame === "Joki Ml") {
+        window.location.href = "joki.html";
+      }
+    });
+  });
+</script>
+</body>
+</html>

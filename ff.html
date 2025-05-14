@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top-Up Free Fire</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between p-4 bg-gray-800">
+    <div class="flex items-center gap-2">
+      <img src="img2.jpg" alt="Logo" class="w-10 h-10 rounded-full" />
+      <span class="text-lg font-bold">SANZ STORE ID</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <button>
+        <svg class="w-6 h-6" fill="white" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button class="bg-gray-700 p-2 rounded-lg">
+        <svg class="w-5 h-5" fill="white" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 8 8c0 1.85-.63 3.55-1.69 4.91L22 22l-2 2-5.91-5.69A8 8 0 1 1 10 2z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Game Info -->
+  <section class="relative bg-gradient-to-tr from-gray-700 to-black p-4 flex items-center gap-4">
+    <img src="FF.png" alt="Free Fire" class="w-20 h-20 rounded-xl object-cover">
+    <h1 class="text-2xl font-semibold">Free Fire</h1>
+  </section>
+
+  <!-- Lengkapi Data -->
+  <section class="p-4 bg-gray-800 rounded-lg mx-4">
+    <div class="bg-red-600 px-4 py-2 rounded-t-lg font-bold">Lengkapi Data</div>
+    <div class="p-4">
+      <div class="flex gap-2 mb-2">
+        <input type="text" placeholder="Masukkan User ID" class="w-1/2 p-2 rounded-lg text-black" />
+      </div>
+      <p class="text-sm text-gray-400">
+        Silahkan masukan User ID Anda untuk menyelesaikan transaksi. Contoh: <span class="underline text-white">12345678(1234)</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Pilih Nominal -->
+<section class="p-4 bg-gray-800 rounded-lg mx-4 mt-6">
+  <div class="bg-red-600 px-4 py-2 rounded-t-lg font-bold">Pilih Nominal Layanan</div>
+  <div class="p-4 grid grid-cols-2 gap-3" id="nominalContainer">
+    
+    <!-- Contoh item sebagai button -->
+    <button data-id="wdp1" onclick="selectNominal(this)" class="bg-white text-black p-2 rounded-lg shadow text-left focus:outline-none transition-all hover:ring-2 ring-blue-500">
+      <p class="text-sm font-semibold">Member mingguan</p>
+      <p class="font-bold mt-1">Rp28.189</p>
+    </button>
+    
+    <button data-id="wdp2" onclick="selectNominal(this)" class="bg-white text-black p-2 rounded-lg shadow text-left focus:outline-none transition-all hover:ring-2 ring-blue-500">
+      <p class="text-sm font-semibold">Member bulanan</p>
+      <p class="font-bold mt-1">Rp85.936</p>
+    </button>
+
+    <button data-id="d5" onclick="selectNominal(this)" class="bg-white text-black p-2 rounded-lg shadow text-left focus:outline-none transition-all hover:ring-2 ring-blue-500">
+      <p class="text-sm font-semibold">5 Diamonds (5 + 0)</p>
+      <p class="font-bold mt-1">Rp1.468</p>
+    </button>
+
+    <button data-id="d12" onclick="selectNominal(this)" class="bg-white text-black p-2 rounded-lg shadow text-left focus:outline-none transition-all hover:ring-2 ring-blue-500">
+      <p class="text-sm font-semibold">12 Diamonds (11 + 1)</p>
+      <p class="font-bold mt-1">Rp3.417</p>
+    </button>
+
+    <button data-id="d19" onclick="selectNominal(this)" class="bg-white text-black p-2 rounded-lg shadow text-left focus:outline-none transition-all hover:ring-2 ring-blue-500">
+      <p class="text-sm font-semibold">19 Diamonds (17 + 2)</p>
+      <p class="font-bold mt-1">Rp5.371</p>
+    </button>
+
+    <button data-id="d28" onclick="selectNominal(this)" class="bg-white text-black p-2 rounded-lg shadow text-left focus:outline-none transition-all hover:ring-2 ring-blue-500">
+      <p class="text-sm font-semibold">28 Diamonds (25 + 3)</p>
+      <p class="font-bold mt-1">Rp7.814</p>
+    </button>
+
+    <button data-id="d28" onclick="selectNominal(this)" class="bg-white text-black p-2 rounded-lg shadow text-left focus:outline-none transition-all hover:ring-2 ring-blue-500">
+      <p class="text-sm font-semibold">44 Diamonds (40 + 4)</p>
+      <p class="font-bold mt-1">Rp11.371</p>
+    </button>
+
+    <button data-id="d28" onclick="selectNominal(this)" class="bg-white text-black p-2 rounded-lg shadow text-left focus:outline-none transition-all hover:ring-2 ring-blue-500">
+      <p class="text-sm font-semibold">59 Diamonds (53 + 6)</p>
+      <p class="font-bold mt-1">Rp15.322</p>
+    </button>
+
+    <button data-id="d28" onclick="selectNominal(this)" class="bg-white text-black p-2 rounded-lg shadow text-left focus:outline-none transition-all hover:ring-2 ring-blue-500">
+      <p class="text-sm font-semibold">85 Diamonds (77 + 8)</p>
+      <p class="font-bold mt-1">Rp22.900</p>
+    </button>
+
+    <button data-id="d28" onclick="selectNominal(this)" class="bg-white text-black p-2 rounded-lg shadow text-left focus:outline-none transition-all hover:ring-2 ring-blue-500">
+      <p class="text-sm font-semibold">144 Diamonds (130 + 14)</p>
+      <p class="font-bold mt-1">Rp37.900</p>
+    </button>
+
+  </div>
+</section>
+
+<!-- Metode Pembayaran -->
+  <section class="p-4 bg-gray-800 rounded-lg mx-4 mt-6">
+    <div class="bg-red-600 px-4 py-2 rounded-t-lg font-bold">Metode Pembayaran</div>
+    <div class="p-4">
+      <select id="paymentMethod" class="w-full p-3 border border-gray-300 rounded-lg text-black" required>
+        <option value="">Pilih metode</option>
+        <option>OVO</option>
+        <option>DANA</option>
+        <option>GoPay</option>
+        <option>Transfer Bank</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Tombol Bayar Sekarang -->
+  <section class="p-4 mx-4 mt-6">
+    <button type="button" onclick="validateForm()" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition active:scale-95">
+      Bayar Sekarang
+    </button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 py-6 text-sm">
+    &copy; 2025 SANZ STORE ID. All rights reserved.
+  </footer>
+
+  <!-- Script -->
+  <script>
+    let selectedButton = null;
+    function selectNominal(button) {
+      const buttons = document.querySelectorAll('#nominalContainer button');
+      buttons.forEach(btn => btn.classList.remove('ring-4', 'ring-blue-500', 'bg-blue-100'));
+
+      button.classList.add('ring-4', 'ring-blue-500', 'bg-blue-100');
+      selectedButton = button.getAttribute("data-id");
+      console.log("Nominal dipilih:", selectedButton);
+    }
+
+    function validateForm() {
+      const paymentMethod = document.getElementById('paymentMethod').value;
+      if (!selectedButton) {
+        alert("Pilih nominal terlebih dahulu!");
+        return;
+      }
+      if (!paymentMethod) {
+        alert("Pilih metode pembayaran!");
+        return;
+      }
+      alert("Pembayaran berhasil!");
+    }
+  </script>
+
+</body>
+</html>
